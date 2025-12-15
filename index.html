@@ -15,26 +15,42 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #e2e8f0;
-            background: #0f0f0f;
+            background: radial-gradient(ellipse at top, #1a1a2e 0%, #0f0f0f 50%, #0a0a0a 100%);
             min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.08) 50%, rgba(236, 72, 153, 0.15) 100%);
+            z-index: 1;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 20px;
+            min-height: 100vh;
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 800;
             text-align: center;
-            margin-bottom: 24px;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+            position: relative;
+            z-index: 2;
         }
 
         h2 {
@@ -94,10 +110,12 @@
         .subtitle {
             font-size: clamp(1.25rem, 3vw, 1.75rem);
             text-align: center;
-            margin-bottom: 40px;
-            font-weight: 400;
-            color: #94a3b8;
+            margin-bottom: 50px;
+            font-weight: 500;
+            color: #cbd5e1;
             line-height: 1.4;
+            position: relative;
+            z-index: 2;
         }
 
         .intro {
@@ -109,6 +127,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(75, 85, 105, 0.3);
         }
 
         .section {
@@ -117,6 +136,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(75, 85, 105, 0.3);
         }
 
         ul {
@@ -258,7 +278,7 @@
             border-radius: 16px;
             margin: 40px 0;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-            border: 2px solid transparent;
+            border: 2px solid rgba(75, 85, 105, 0.3);
             transition: border-color 0.3s ease;
         }
 
@@ -304,6 +324,7 @@
             margin: 40px 0;
             text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(75, 85, 105, 0.3);
         }
 
         .video-placeholder {
@@ -336,20 +357,6 @@
             max-width: 600px;
             margin: 20px;
             position: relative;
-        }
-
-        @media (max-width: 768px) {
-            .modal-content {
-                padding: 30px 20px;
-                margin: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .modal-content {
-                padding: 25px 15px;
-                margin: 5px;
-            }
         }
 
         .close-modal {
@@ -394,178 +401,32 @@
             .cta {
                 padding: 40px 20px;
             }
-            
-            .final-cta .button {
-                display: block;
-                margin: 10px auto;
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 12px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-                margin: 40px 0 20px 0;
-            }
-            
-            h3 {
-                font-size: 1.3rem;
-            }
-            
-            .section, .intro, .option-card, .case-study {
-                padding: 25px 15px;
-            }
-            
-            .cta {
-                padding: 30px 15px;
-            }
-            
-            .button {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .final-cta .button {
-                display: block;
-                margin: 10px auto;
-                width: 100%;
-                max-width: 250px;
-            }
-            
-            .modal-content {
-                padding: 20px 15px;
-                margin: 10px 5px;
-            }
-        }
-
-        @media (max-width: 320px) {
-            .container {
-                padding: 20px 10px;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-            }
-            
-            h2 {
-                font-size: 1.3rem;
-            }
-            
-            h3 {
-                font-size: 1.2rem;
-            }
-            
-            .section, .intro, .option-card, .case-study {
-                padding: 20px 12px;
-            }
-            
-            .button {
-                padding: 10px 16px;
-                font-size: 0.85rem;
-            }
-            
-            .modal-content {
-                padding: 15px 10px;
-                margin: 5px;
-            }
-            
-            .close-modal {
-                top: 5px;
-                right: 5px;
-                width: 25px;
-                height: 25px;
-                font-size: 1.5rem;
-            }
-            
-            .final-cta .button {
-                max-width: 200px;
-            }
-            
-            /* Footer adjustments for very small screens */
-            footer {
-                padding: 15px 10px !important;
-            }
-            
-            .footer .container {
-                padding: 0 5px !important;
-            }
-            
-            .footer .social-links {
-                gap: 15px;
-            }
-            
-            .footer .legal-links {
-                gap: 15px;
-                font-size: 0.8rem;
-            }
-            
-            .footer .disclaimer {
-                font-size: 0.75rem;
-            }
-            
-            .footer .credits {
-                font-size: 0.7rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Become a Profitable Trader — With a System That Actually Works</h1>
-        
-        <div class="intro">
-            <p>You don't need more signals. You don't need more indicators. You don't need more guessing.</p>
-            <p>You need <strong class="emphasis">structure, execution, and a system you trust</strong>.</p>
-            <p>Choose the path that fits your goals — <strong class="emphasis">1-on-1 Mentorship</strong> or <strong class="emphasis">the Discord Group</strong> — and start trading with clarity instead of hope.</p>
-        </div>
-
-        <h2>Choose Your Path</h2>
-        
-        <div class="option-card" style="margin-bottom: 0px;">
-            <h3 class="option-title">1-on-1 Mentorship</h3>
-            <p>Build your personal trading system with direct guidance.</p>
-            <ul class="checklist">
-                <li><strong>Private calls</strong></li>
-                <li><strong>Custom system built around <em>your</em> psychology</strong></li>
-                <li><strong>Trade reviews & execution correction</strong></li>
-                <li><strong>24/7 DM access</strong></li>
-                <li><strong>Zero noise, zero distractions</strong></li>
-            </ul>
-            <div class="center-text" style="position: relative;">
-                <a href="#" class="button">Apply for 1-on-1 Mentorship →</a>
-                <p class="note" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); width: 100%; margin: 0;">(Limited capacity for quality & support)</p>
+        <div style="position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+            <h2 style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 600; text-align: center; margin-bottom: 15px; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px;">From Losing To Printing</h2>
+            <h1 style="font-size: clamp(2.2rem, 5.5vw, 4rem); margin-bottom: 10px; text-align: center; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 8px 25px rgba(59, 130, 246, 0.15));">From -$60,000 to +$13,000<br>in 10 Days</h1>
+            
+            <div class="subtitle" style="margin-bottom: 50px; text-align: center;">
+                Stop guessing. Stop losing. Start executing with a system that actually works.
+            </div>
+            
+            <div class="center-text" style="margin-bottom: 80px; position: relative;">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%); border-radius: 50%; z-index: -1;"></div>
+                <a href="https://cal.com" class="button" style="margin: 10px; font-size: 1.1rem; padding: 18px 35px; position: relative; z-index: 3;">Apply for Mentorship →</a>
+                <a href="https://whop.com" class="button" style="margin: 10px; font-size: 1.1rem; padding: 18px 35px; position: relative; z-index: 3;">Join Discord →</a>
             </div>
         </div>
 
-        <div class="option-card">
-            <h3 class="option-title">Discord Group</h3>
-            <p>Learn, execute, and grow inside a structured trading community.</p>
-            <ul class="checklist">
-                <li><strong>Daily market insights</strong></li>
-                <li><strong>Trade breakdowns & analysis</strong></li>
-                <li><strong>Education & execution frameworks</strong></li>
-                <li><strong>Community support</strong></li>
-                <li><strong>Structured environment (not chaos)</strong></li>
-            </ul>
-            <div class="center-text">
-                <a href="#" class="button">Join the Discord Group →</a>
-            </div>
-        </div>
+        
 
-        <h2>Real Results. Real Execution. Real Change.</h2>
+        <h2 style="margin-top: 250px;">Real Results. Real Execution. Real Change.</h2>
         
         <div class="case-study">
-            <h3 style="text-align: center; justify-content: center;">Case Study: From Drawdown to Discipline</h3>
+            <h3 style="text-align: center; justify-content: center;">Case Study: We Build, You Print</h3>
             <video controls style="width: 100%; max-width: 600px; border-radius: 12px; margin: 30px 0;">
                 <source src="website content/aFfG6lcbqo5iwdYKB8_QuIQ5Gm_5oK6-yK8cGxeJIqo (1).mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -573,8 +434,8 @@
             <p><strong>This is not theory. This is execution under pressure.</strong></p>
             
             <div style="margin: 40px 0 0px 0; position: relative;">
-                <h4>Clickable Case Study</h4>
-                <p style="font-size: 1.5rem; font-weight: 600; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">"From -$60,000 to +$13,000 in 10 Days"</p>
+                <h4 style="font-size: 1.5rem; font-weight: 600; color: #f1f5f9; text-align: center; margin-bottom: 15px;">Clickable Case Study</h4>
+                <p style="font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-align: center; margin-bottom: 25px;">"From -$60,000 to +$13,000 in 10 Days"</p>
                 <div style="text-align: center;">
                     <a href="#" class="button" onclick="document.getElementById('caseModal').style.display='flex'; return false;">View Case Study →</a>
                     <p class="note" style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 100%; margin: 0;">(opens modal / popup)</p>
@@ -583,39 +444,33 @@
         </div>
 
         <div id="caseModal" class="modal">
-<div class="modal-content" style="max-width: 1200px;">
+            <div class="modal-content" style="max-width: 1400px;">
                 <span class="close-modal" onclick="document.getElementById('caseModal').style.display='none'">&times;</span>
-                <h3 style="text-align: center; margin: 0 0 20px 0;">Case Study: From -$60,000 to +$13,000 in 10 Days</h3>
-                <div style="display: flex; gap: 20px; margin: 30px 0; align-items: flex-start; flex-wrap: wrap;">
-                    <div style="flex: 1; text-align: center; min-width: 250px;">
+                <div style="display: flex; gap: 20px; margin: 30px 0; align-items: flex-start;">
+                    <div style="flex: 1; text-align: center;">
                         <h4 style="margin-bottom: 15px; color: #f1f5f9;">Before</h4>
-                        <img src="website content/adam PNL.jpg" alt="Before: -$80,000 loss" style="width: 100%; height: auto; max-height: 500px; object-fit: contain; border-radius: 8px; border: 2px solid #475569;">
+                        <img src="website content/adam PNL.jpg" alt="Before: -$80,000 loss" style="width: 100%; height: auto; max-height: 900px; object-fit: contain; border-radius: 8px; border: 2px solid #475569;">
                     </div>
-                    <div style="flex: 1; text-align: center; min-width: 250px;">
+                    <div style="flex: 1; text-align: center;">
                         <h4 style="margin-bottom: 15px; color: #f1f5f9;">After</h4>
-                        <img src="website content/adam pnl after l2.jpg" alt="After: +$10,000 profit" style="width: 100%; height: auto; max-height: 500px; object-fit: contain; border-radius: 8px; border: 2px solid #475569;">
-                    </div>
-                </div>
-                    <div style="flex: 1; text-align: center; min-width: 250px;">
-                        <h4 style="margin-bottom: 15px; color: #f1f5f9;">After</h4>
-                        <img src="website content/adam pnl after l2.jpg" alt="After: +$10,000 profit" style="width: 100%; height: auto; max-height: 500px; object-fit: contain; border-radius: 8px; border: 2px solid #475569;">
+                        <img src="website content/adam pnl after l2.jpg" alt="After: +$10,000 profit" style="width: 100%; height: auto; max-height: 900px; object-fit: contain; border-radius: 8px; border: 2px solid #475569;">
                     </div>
                 </div>
                 <p style="text-align: center; font-style: italic; color: #94a3b8; margin-top: 20px;">
                     "No signals. No gambling. Just structure, execution, and discipline — applied correctly."
                 </p>
-                <p style="text-align: center; margin-top: 20px; font-weight: 600; color: #f1f5f9;">This section alone destroys skepticism.</p>
+
             </div>
         </div>
 
-        <h2>How the 1-on-1 Trader Accelerator Works</h2>
+        <h2>Trader Accelerator</h2>
         
         <div class="section">
+            <h3 style="text-align: center; justify-content: center; font-size: 2.5rem;">1-on-1 Mentorship</h3>
             <p>This is a step-by-step transformation — not a "hope this works" program.</p>
             
-            <h3><span class="step-number">1</span> Learn Before You Risk Your Hard-Earned Cash</h3>
-            <p>Before you place a single real trade, you master how markets <em>actually</em> move.</p>
-            <p>Instead of guessing every entry and sabotaging yourself, you learn:</p>
+            <h3><span class="step-number">1</span> Level up Your Money Game</h3>
+            <p>Before you place a single real trade, you master how markets <em>actually</em> move. Instead of guessing every entry and sabotaging yourself, you learn:</p>
             <ul>
                 <li>Market behavior</li>
                 <li>Entry logic</li>
@@ -626,8 +481,7 @@
             <p>You stop trading emotionally — and start executing with <strong class="emphasis">ice-cold precision</strong>. No more blowing accounts. No more revenge trading. No more self-sabotage.</p>
             
             <h3><span class="step-number">2</span> Build <em>Your</em> Personal Trading System</h3>
-            <p>No more signals. No more random strategies. No more forcing trades that don't fit you.</p>
-            <p>Together, we build <strong class="emphasis">your own trading framework</strong>, designed around:</p>
+            <p>No more signals. No more random strategies. No more forcing trades that don't fit you. Together, we build <strong class="emphasis">your own trading framework</strong>, designed around:</p>
             <ul>
                 <li>Your psychology</li>
                 <li>Your risk limit</li>
@@ -638,14 +492,20 @@
             
             <h3><span class="step-number">3</span> Put the System to the Test — Live</h3>
             <p>Now we go live.</p>
-            <p>You execute real trades, in real markets, with real feedback.</p>
-            <p>I review your trades. I correct the mistakes costing you money. I help you refine execution in real time.</p>
-            <p>Confusion turns into clarity. Hesitation turns into confidence. Guessing turns into execution.</p>
-            <p>This is where traders finally <em>click</em>.</p>
+            <ul>
+                <li>You execute real trades</li>
+                <li>Real live time feedback</li>
+                <li>I review your trades and correct your mistakes</li>
+            </ul>
+            <p>Confusion turns into clarity. Hesitation turns into confidence. Guessing turns into execution. This is where traders finally <em>click</em>.</p>
+            
+            <div class="center-text" style="margin-top: 40px;">
+                <a href="https://cal.com" class="button">Apply for Mentorship →</a>
+            </div>
         </div>
 
         <div class="section">
-            <h3 style="text-align: center; justify-content: center;">Discord Group</h3>
+            <h3 style="text-align: center; justify-content: center; font-size: 2.5rem;">Discord Group</h3>
             <p>This is for traders who:</p>
             <ul>
                 <li>Want structured guidance without 1-on-1 pricing</li>
@@ -657,31 +517,18 @@
             <h3 style="text-align: center; justify-content: center;">Inside the Discord Group</h3>
             <ul class="checklist">
                 <li><strong>Market updates & analysis</strong></li>
-                <li><strong>Trade breakdowns</strong></li>
+                <li><strong>Trade breakdowns & analysis</strong></li>
                 <li><strong>Educational resources</strong></li>
                 <li><strong>Psychology & execution guidance</strong></li>
                 <li><strong>Structured, non-toxic environment</strong></li>
             </ul>
             <p>This is <strong>not</strong> a signals casino. This is a learning & execution environment.</p>
             <div class="center-text">
-                <a href="#" class="button">Join the Discord Group →</a>
+                    <a href="https://whop.com" class="button">Join the Discord Group →</a>
             </div>
         </div>
 
-        <h2>Who This Is For</h2>
-        
-        <div class="section">
-            <p>This is for you if:</p>
-            <ul>
-                <li>You're serious about becoming profitable</li>
-                <li>You want independence — not signals</li>
-                <li>You're tired of starting over</li>
-                <li>You want confidence in your execution</li>
-                <li>You're ready to be coached, not entertained</li>
-            </ul>
-            
-            <p>This is <strong>not</strong> for gamblers. Not for lazy traders. Not for people chasing shortcuts.</p>
-        </div>
+
 
         <h2>Don't Just Take My Word for It</h2>
         
@@ -689,8 +536,8 @@
             <h3 style="text-align: center; justify-content: center;">What Traders Are Saying</h3>
             <div style="display: flex; flex-direction: column; gap: 20px; align-items: center; margin: 30px 0;">
                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                    <img src="website content/message 2.png" alt="Testimonial 2" style="width: 300px; height: 400px; object-fit: cover; border-radius: 8px; border: 2px solid #475569; max-width: 100%;">
-                    <img src="website content/message 3.png" alt="Testimonial 3" style="width: 300px; height: 400px; object-fit: contain; border-radius: 8px; border: 2px solid #475569; max-width: 100%;">
+                    <img src="website content/message 2.png" alt="Testimonial 2" style="width: 300px; max-width: 100%; height: auto; min-height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #475569;">
+                    <img src="website content/message 3.png" alt="Testimonial 3" style="width: 300px; max-width: 100%; height: auto; min-height: 200px; object-fit: contain; border-radius: 8px; border: 2px solid #475569;">
                 </div>
                 <img src="website content/message 1.png" alt="Testimonial 1" style="max-width: 625px; width: 100%; border-radius: 8px; border: 2px solid #475569;">
             </div>
@@ -703,69 +550,90 @@
             
         </div>
 
-        <h2>Final Thought</h2>
+        <h2>Pricing That Converts</h2>
         
-        <div class="section">
-            <p>You can keep:</p>
-            <ul>
-                <li>Guessing entries</li>
-                <li>Following random signals</li>
-                <li>Starting over every month</li>
-            </ul>
-            <p>Or you can choose:</p>
-            <ul>
-                <li><strong class="emphasis">Structure</strong></li>
-                <li><strong class="emphasis">Execution</strong></li>
-                <li><strong class="emphasis">Discipline</strong></li>
-            </ul>
-            <p>Both paths lead to the same destination — <strong class="emphasis">a trader who knows exactly what they're doing.</strong></p>
+        <div style="display: flex; gap: 30px; margin: 40px 0; flex-wrap: wrap; justify-content: center;">
+            <div class="option-card" style="flex: 1; min-width: 300px; max-width: 500px; margin-bottom: 0; display: flex; flex-direction: column;">
+                <h3 class="option-title">1-on-1 Mentorship</h3>
+                <p style="font-size: 3.5rem; font-weight: 700; text-align: center; margin: 10px 0; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">$5000<span style="font-size: 1.2rem; margin-left: 5px;">/month</span></p>
+                <p>Build your personal trading system with direct guidance.</p>
+                <ul class="checklist">
+                    <li><strong>Private calls</strong></li>
+                    <li><strong>Custom system build for YOU</strong></li>
+                    <li><strong>Trade reviews & execution correction</strong></li>
+                    <li><strong>24/7 DM access</strong></li>
+                    <li><strong>Zero noise, zero distractions</strong></li>
+                    <li><strong>Psychology coaching</strong></li>
+                </ul>
+                <div class="center-text" style="position: relative; margin-top: auto;">
+                    <a href="https://cal.com" class="button">Apply for 1-on-1 Mentorship →</a>
+                    <p class="note" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); width: 100%; margin: 0;">(Limited capacity for quality & support)</p>
+                </div>
+            </div>
+
+            <div class="option-card" style="flex: 1; min-width: 300px; max-width: 500px;">
+                <h3 class="option-title">Discord Group</h3>
+                <p style="font-size: 3.5rem; font-weight: 700; text-align: center; margin: 10px 0; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">$129<span style="font-size: 1.2rem; margin-left: 5px;">/month</span></p>
+                <p>Learn, execute, and grow inside a structured trading community.</p>
+                <ul class="checklist">
+                    <li><strong>Daily market insights</strong></li>
+                    <li><strong>Trade breakdowns & analysis</strong></li>
+                    <li><strong>Educational resources</strong></li>
+                    <li><strong>Community support</strong></li>
+
+                    <li><strong>Discord access</strong></li>
+                    <li><strong>Access to exclusive market alerts</strong></li>
+                </ul>
+                <div class="center-text">
+                <a href="https://whop.com" class="button">Join the Discord Group →</a>
+                </div>
+            </div>
         </div>
+
+
+
+
 
         <div class="final-cta">
             <h2>Choose Your Path & Get Started</h2>
-            <a href="#" class="button">Apply for 1-on-1 Mentorship →</a>
-            <a href="#" class="button">Join the Discord Group →</a>
+            <a href="https://cal.com" class="button">Apply for 1-on-1 Mentorship →</a>
+            <a href="https://whop.com" class="button">Join the Discord Group →</a>
             <p class="note">(Limited capacity for quality & support)</p>
         </div>
 
     </div>
 
-    <footer class="footer" style="background: #1a1a1a; padding: 20px 20px; margin-top: 40px; border-top: 1px solid #2d3748;">
-        <div class="container" style="padding: 0;">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+    <footer style="background: #1a1a1a; padding: 15px 20px; margin-top: 40px; border-top: 1px solid #2d3748;">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                 <!-- Social Links -->
-                <div class="social-links" style="display: flex; gap: 20px; margin-bottom: 30px;">
-                    <a href="https://x.com/L2WTrades" style="color: #cbd5e1; font-size: 1.5rem; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #475569; border-radius: 50%;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://x.com/L2WTrades" style="color: #cbd5e1; font-size: 1.2rem; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; border: 1px solid #475569; border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="https://t.me/operatormf" style="color: #cbd5e1; font-size: 1.5rem; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #475569; border-radius: 50%;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <a href="https://t.me/operatormf" style="color: #cbd5e1; font-size: 1.2rem; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; border: 1px solid #475569; border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.56c-.21 2.34-1.13 7.99-1.6 10.59-.2 1.11-.59 1.48-.97 1.51-.82.07-1.45-.54-2.24-1.06-1.24-.82-1.95-1.33-3.15-2.13-1.39-.92-.49-1.43.31-2.26.21-.22 3.86-3.54 3.93-3.84.01-.04.01-.19-.07-.27s-.2-.05-.29-.03c-.12.03-2.09 1.33-5.91 3.91-.56.38-1.06.57-1.52.56-.5-.01-1.46-.28-2.18-.51-.88-.28-1.57-.43-1.51-.91.03-.25.38-.51 1.05-.78 4.11-1.79 6.85-2.97 8.21-3.55 3.92-1.63 4.73-1.91 5.26-1.92.12 0 .37.03.54.17.14.12.18.28.2.44-.01.06 0 .23-.01.36z"/>
                         </svg>
                     </a>
                 </div>
                 
                 <!-- Legal Links -->
-                <div class="legal-links" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                    <a href="refund-cancellation.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Refund & Cancellation</a>
-                    <a href="terms-conditions.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Terms & Conditions</a>
-                    <a href="contact-support.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;">Contact & Support</a>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <a href="refund-cancellation.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: none; transition: color 0.3s ease;">Refund & Cancellation</a>
+                    <a href="terms-conditions.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: none; transition: color 0.3s ease;">Terms & Conditions</a>
+                    <a href="contact-support.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: none; transition: color 0.3s ease;">Contact & Support</a>
                 </div>
                 
-                <!-- Disclaimer -->
-                <div class="disclaimer" style="text-align: center; max-width: 600px;">
-                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin: 0;">
-                        Educational purpose only. L2W Trades provides teaching & mentorship, not financial, investment, tax or legal advice. Trading is high risk and you are fully responsible for your own decisions and results.
+                <!-- Disclaimer & Credits -->
+                <div style="text-align: center;">
+                    <p style="color: #64748b; font-size: 0.75rem; line-height: 1.4; margin: 0;">
+                        Educational purpose only. L2W Trades provides teaching & mentorship, not financial advice. Trading is high risk and you are fully responsible for your own decisions.
                     </p>
-                </div>
-                
-                <!-- Credits -->
-                <div class="credits" style="text-align: center;">
-                    <p style="color: #64748b; font-size: 0.85rem; margin: 0; line-height: 1.4;">
-                        Coded by <a href="https://shemhamforash.io" style="color: #3b82f6; text-decoration: none;">Shemhamforash.io</a><br>
-                        and powered by <a href="#" style="color: #3b82f6; text-decoration: none;">Progressus Advisory</a>
+                    <p style="color: #64748b; font-size: 0.7rem; margin: 5px 0 0 0;">
+                        Coded by <a href="https://shemhamforash.io" style="color: #3b82f6; text-decoration: none;">Shemhamforash.io</a> • Powered by <a href="#" style="color: #3b82f6; text-decoration: none;">Progressus Advisory</a>
                     </p>
                 </div>
             </div>
