@@ -45,4 +45,4 @@ To preview: Open any `.html` file directly in a web browser. No server required.
 - Modal popup for case study details (`#caseModal`)
 - Responsive breakpoint at 768px
 - Gradient text uses `-webkit-background-clip: text`
-- Spotlight effect follows cursor position
+- Spotlight effect follows cursor position 
